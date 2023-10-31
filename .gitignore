@@ -1,0 +1,7 @@
+__pycache__/
+robot/
+env.py
+report.html
+log.html
+output.xml
+interactive_console_output.xml
