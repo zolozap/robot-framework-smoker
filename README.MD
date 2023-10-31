@@ -1,8 +1,10 @@
 
-# Robot Framework
+# Robot 🤖 Framework
 
-Just A Robot smoke tester for conicle
+![Logo](https://res.cloudinary.com/practicaldev/image/fetch/s--aLMLGcII--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xgrx36xi5jexzmlugxg5.png)
 
+
+Just A Robot smoke 🚬 tester for conicle
 
 
 ## Installation
@@ -11,6 +13,14 @@ Install robot-project with pip
 
 ```bash
   pip install -r requirement.txt
+```
+
+Create file env.py at root of folder
+```python
+USERNAME="your_username"
+PASSWORD="your_password"
+URL="https://url_endpoint.com"
+DASHBOARD_URL="https://url_endpoint.com/dashboard/"
 ```
     
 ## How to run
@@ -26,6 +36,7 @@ Or, if you want to run all test files in a directory:
 ```bash
 robot /path/to/your/test/directory
 ```
+
 ## Cheat Sheet
 
 ```javascript
@@ -99,5 +110,5 @@ Comments:
 ```
 ## Authors
 
-- [@NutTheZolozap](https://www.github.com/zolozap)
+- 🧑🏻‍💻[@NutTheZolozap](https://www.github.com/zolozap)
 
