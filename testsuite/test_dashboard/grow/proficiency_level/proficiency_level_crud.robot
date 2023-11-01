@@ -43,12 +43,35 @@ Create New Proficiency Type
     Wait Until Page Contains Element    xpath=//*[@data-qa="btn-confirm"]
     Click Element    xpath=//*[@data-qa="btn-confirm"]
 
-View and Update Proficiency Level
-    Wait Until Page Contains Element    xpath=//*[@data-qa="txt-field-proficiency-type"]
-    Generate and Input Random Text Update
-    Click Element    xpath=//*[@data-qa="btn-save-back"]
+View and Create Proficiency Level
+    Wait Until Page Contains Element    xpath=//*[@data-qa="btn-add-proficiency-level"]
+    Click Element    xpath=//*[@data-qa="btn-add-proficiency-level"]
+    Wait Until Page Contains Element    xpath=//*[@data-qa="txt-field-proficiency-level"]
+    Generate and Input Random Proficiency Level
+    Wait Until Page Contains Element    xpath=//*[@data-qa="btn-confirm"]
+    Click Element    xpath=//*[@data-qa="btn-confirm"]
+    Wait Until Page Contains Element    xpath=//*[@data-qa="panel-1"]
 
+Update Proficiency Level
+    Wait Until Element Is Visible    xpath=//*[@data-qa="ico-edit"]
+    Click Element    xpath=(//*[@data-qa="ico-edit"])[1]
+    Generate and Input Random Edit Proficiency Level
+    Wait Until Page Contains Element    xpath=//*[@data-qa="btn-confirm"]
+    Click Element    xpath=//*[@data-qa="btn-confirm"]
 
+Delete Proficiency Level
+    Wait Until Element Is Visible    xpath=//*[@data-qa="ico-delete"]
+    Click Element    xpath=(//*[@data-qa="ico-delete"])[1]
+    Wait Until Page Contains Element    class=el-button--primary.btn-confirm
+    Click Element    class=el-button--primary.btn-confirm
+
+Delete Proficiency Type
+    Click Element    xpath=//*[@data-qa="breadcrumb-1"]
+    Wait Until Element Is Visible    xpath=//*[@data-qa="ico-delete"]
+    Click Element    xpath=(//*[@data-qa="ico-delete"])[1]
+    Wait Until Page Contains Element    class=el-button--primary.btn-confirm
+    Click Element    class=el-button--primary.btn-confirm
+    Close Browser
 
 *** Keywords ***
 Set Global Timeout
@@ -62,3 +85,15 @@ Generate and Input Random Text
 Generate and Input Random Text Update
     ${RANDOM_NAME_TEXT} =    Generate Random Text    10
     Input Text    xpath://input[@data-qa="txt-field-proficiency-type"]    RF_${RANDOM_NAME_TEXT}
+
+Generate and Input Random Proficiency Level
+    ${RANDOM_NAME_TEXT} =    Generate Random Text    100
+    ${RANDOM_DESC_TEXT} =    Generate Random Text    2000
+    Input Text    xpath://input[@data-qa="txt-field-proficiency-level"]    RF_${RANDOM_NAME_TEXT}
+    Input Text    xpath://textarea[@data-qa="txt-field-description"]    ${RANDOM_DESC_TEXT}
+
+Generate and Input Random Edit Proficiency Level
+    ${RANDOM_NAME_TEXT} =    Generate Random Text    10
+    ${RANDOM_DESC_TEXT} =    Generate Random Text    1000
+    Input Text    xpath://input[@data-qa="txt-field-proficiency-level"]    RF_${RANDOM_NAME_TEXT}
+    Input Text    xpath://textarea[@data-qa="txt-field-description"]    edited_${RANDOM_DESC_TEXT}_edited
